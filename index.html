@@ -1,0 +1,53 @@
+---
+---
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ page.title }} - {{ site.title }}</title>
+        {% include head.html %}
+        <link rel="stylesheet" type="text/css" href="{{ site.path }}/css/home.css" >
+        <style>
+            .navbar-brand {
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="fullpage">
+            <section id="onesection">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3>Intro</h3>
+                            <p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="twosection">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3>OctoPrint</h3>
+                            <p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="threesection">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3>CNC</h3>
+                            <p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script src="{{ site.path }}/js/fullpage/jquery.fullpage.js"></script>
+        <script src="{{ site.path }}/js/home.js"></script>
+    </body>
+</html>
+

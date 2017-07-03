@@ -1,0 +1,34 @@
+---
+---
+
+@import 'bootswatch/variables';
+@import 'bootstrap-toc';
+@import 'prism';
+
+.documentation {
+  padding-top:40px;
+}
+
+.navbar-buffer {
+  height:40px;
+}
+
+#toc-container {
+  display:none;
+  position: fixed;
+  top:100px;
+  left: 100px;
+  width:24%;
+
+  #toc {
+    position:relative;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+
+  #toc-container {
+    display:inherit;
+  }
+
+}

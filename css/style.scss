@@ -1,0 +1,28 @@
+---
+---
+
+// add bootstrap variable settings here
+
+@import 'bootswatch/variables';
+@import 'bootstrap/stylesheets/bootstrap';
+@import 'bootswatch/bootswatch';
+
+@import 'jquery.fullpage';
+
+
+#footer {
+  height:50px;
+}
+
+table {
+  @extend .table;
+}
+
+.navbar-brand > img {
+  height: 55px;
+  margin-top:-15px;
+}
+
+
+
+

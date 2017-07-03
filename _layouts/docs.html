@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ site.title }} | Documentation</title>
+
+    {% include head.html %}
+    <link rel="stylesheet" href="{{ site.path }}/css/docs.css">
+    <script src="{{ site.path }}/js/bootstrap-toc.js"></script>
+    <script src="{{ site.path }}/js/prism.js"></script>
+    <script src="{{ site.path }}/js/docs.js"></script>
+
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        {% include navbar.html %}
+    </div>
+    <div class="documentation">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-push-2 col-xs-2">
+                    <div id="toc-container">
+                        <nav id="toc"></nav>
+                    </div>
+
+                </div>
+                <div class="col-xs-8">
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
