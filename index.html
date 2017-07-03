@@ -1,53 +1,97 @@
 ---
 ---
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>{{ page.title }} - {{ site.title }}</title>
-        {% include head.html %}
-        <link rel="stylesheet" type="text/css" href="{{ site.path }}/css/home.css" >
-        <style>
-            .navbar-brand {
-                display:none;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="fullpage">
-            <section id="onesection">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h3>Intro</h3>
-                            <p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p>
-                        </div>
-                    </div>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{site.path}}/lib/fullPage/jquery.fullPage.css" />
+    <link rel="stylesheet" tyle="text/css" href="{{site.path}}/lib/bootstrap/css/bootstrap.min.css" />
+
+    <script src="{{site.path}}/lib/jquery-3.2.1.min.js"></script>
+
+    <script type="text/javascript" src="{{ site.path }}/lib/fullPage/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="{{ site.path }}/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+	        $('#fullpage').fullpage({
+                sectionSelector: 'section',
+                fixedElements: 'nav, #splash',
+                sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+                menu: '#menu',
+                paddingTop: '250px',
+                onLeave: function(index, nextIndex, direction) {
+                    if(index===1) {
+                        $('#splash').addClass('partial');
+                    }
+
+                    if(nextIndex === 1) {
+                        $('#splash').removeClass('partial');
+                    }
+                }
+
+            });
+        });
+    </script>
+    <style>
+        #splash {
+            position:fixed;
+            left:0;
+            right:0;
+            top:20px;
+            background:purple;
+            height: 400px;
+                -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+      -o-transition: all 0.7s ease;
+         transition: all 0.7s ease;
+        }
+
+        .partial {
+            height:200px !important;
+                -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+      -o-transition: all 0.7s ease;
+         transition: all 0.7s ease;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="fullpage">
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="menu">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project name</a>
                 </div>
-            </section>
-            <section id="twosection">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h3>OctoPrint</h3>
-                            <p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="threesection">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h3>CNC</h3>
-                            <p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p><p>blah</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li data-menuanchor="page1"><a href="#page1">Page 1</a></li>
+                        <li data-menuanchor="page2"><a href="#page2">Page 2</a></li>
+                        <li data-menuanchor="page3"><a href="#page3">Page 3</a></li>
+                        <li><a href="/docs">Docs</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div id="splash">
+            <p>splash</p>
+            <p>splash</p>
+            <p>splash</p>
+            <p>splash</p>
+            <p>splash</p>
+            <p>splash</p>
+            <p>splash</p>
         </div>
-
-        <script src="{{ site.path }}/js/fullpage/jquery.fullpage.js"></script>
-        <script src="{{ site.path }}/js/home.js"></script>
-    </body>
+        <section data-anchor="page1">Some section</section>
+        <section data-anchor="page2">Some section</section>
+        <section data-anchor="page3">Some section</section>
+        <section data-anchor="page4">Some section</section>
+        <section data-anchor="page5">Some section</section>
+    </div>
+</body>
 </html>
-
