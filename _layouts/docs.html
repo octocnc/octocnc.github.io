@@ -3,12 +3,16 @@
 <head>
     <meta charset="utf-8">
     <title>{{ site.title }} | Documentation</title>
+    <link rel="stylesheet" type="text/css" href="{{site.path}}/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.path }}/css/docs.css">
 
-    {% include head.html %}
-    <link rel="stylesheet" href="{{ site.path }}/css/docs.css">
-    <script src="{{ site.path }}/js/bootstrap-toc.js"></script>
-    <script src="{{ site.path }}/js/prism.js"></script>
-    <script src="{{ site.path }}/js/docs.js"></script>
+    <script type="text/javascript" src="{{site.path}}/lib/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{{ site.path }}/lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="{{ site.path }}/js/bootstrap-toc.js"></script>
+    <script type="text/javascript" src="{{ site.path }}/js/prism.js"></script>
+
+    <script type="text/javascript" src="{{ site.path }}/js/docs.js"></script>
 
 </head>
 <body>

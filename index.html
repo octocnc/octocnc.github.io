@@ -3,57 +3,18 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="{{site.path}}/lib/fullPage/jquery.fullPage.css" />
-    <link rel="stylesheet" tyle="text/css" href="{{site.path}}/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{site.path}}/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{site.path}}/css/home.css" />
 
-    <script src="{{site.path}}/lib/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{{site.path}}/lib/jquery-3.2.1.min.js"></script>
 
     <script type="text/javascript" src="{{ site.path }}/lib/fullPage/jquery.fullPage.js"></script>
     <script type="text/javascript" src="{{ site.path }}/lib/bootstrap/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function() {
-	        $('#fullpage').fullpage({
-                sectionSelector: 'section',
-                fixedElements: 'nav, #splash',
-                sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
-                menu: '#menu',
-                paddingTop: '250px',
-                onLeave: function(index, nextIndex, direction) {
-                    if(index===1) {
-                        $('#splash').addClass('partial');
-                    }
-
-                    if(nextIndex === 1) {
-                        $('#splash').removeClass('partial');
-                    }
-                }
-
-            });
-        });
-    </script>
-    <style>
-        #splash {
-            position:fixed;
-            left:0;
-            right:0;
-            top:50px;
-            background:purple;
-            height: 400px;
-                -webkit-transition: all 0.7s ease;
-    -moz-transition: all 0.7s ease;
-      -o-transition: all 0.7s ease;
-         transition: all 0.7s ease;
-        }
-
-        .partial {
-            height:200px !important;
-        }
-
-
-    </style>
+    <script type="text/javascript" src="{{ site.path }}/js/home.js"></script>
 </head>
 <body>
     <div id="fullpage">
-        <nav class="navbar navbar-inverse navbar-fixed-top" id="menu">
+        <nav class="navbar navbar-default navbar-fixed-top" id="menu">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -66,8 +27,8 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li data-menuanchor="page1"><a href="#page1">Page 1</a></li>
-                        <li data-menuanchor="page2"><a href="#page2">Page 2</a></li>
+                        <li data-menuanchor="intro"><a href="#intro">intro</a></li>
+                        <li data-menuanchor="page2"><a href="#page2">learn more</a></li>
                         <li data-menuanchor="page3"><a href="#page3">Page 3</a></li>
                         <li><a href="/docs">Docs</a></li>
                     </ul>
@@ -75,15 +36,29 @@
             </div>
         </nav>
         <div id="splash">
-            <p>splash</p>
-            <p>splash</p>
-            <p>splash</p>
-            <p>splash</p>
-            <p>splash</p>
-            <p>splash</p>
-            <p>splash</p>
+            <img src="{{site.path}}/images/splash.svg" />
         </div>
-        <section data-anchor="page1">Some section</section>
+        <section data-anchor="intro">
+            <div class="container">
+                <div id="features" class="row">
+                    <div class="col-xs-4">
+                        <h3>Octoprint</h3>
+                        <p>An amazing platform that allows to control and monitor all aspects of your 3D printers
+                            directly from your browser.It's underlying structure and API allows control of any device
+                            that uses G-code as its protocol.</p>
+                        <p><a href="#octoprint">Learn More</a></p>
+                    </div>
+                    <div class="col-xs-4">
+                        <h3>CAD/CAM</h3>
+                        <p>G-code for </p>
+                    </div>
+                    <div class="col-xs-4">
+                        c
+                    </div>
+                </div>
+            </div>
+
+        </section>
         <section data-anchor="page2">Some section</section>
         <section data-anchor="page3">Some section</section>
         <section data-anchor="page4">Some section</section>

@@ -1,0 +1,2 @@
+                {% capture octoprint %}{% include octoprint.md %}{% endcapture %}
+                {{ octoprint | markdownify }}
